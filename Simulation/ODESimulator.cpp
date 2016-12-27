@@ -487,32 +487,32 @@ void ODESimulator::Step(Real dt)
           if(marginsRemaining[collpair] == 0) {
             if(!didRollback) {
               string id1=ObjectName(collpair.first),id2=ObjectName(collpair.second);
-              printf("ODESimulation: rolling back due to new penetration between bodies %s and %s\n",id1.c_str(),id2.c_str());
-              if(lastMarginsRemaining.count(collpair) == 0)
-                printf("  no previous contact\n");
-              else
-                printf("  previously had depth %g\n",lastMarginsRemaining[collpair]);
+              //printf("ODESimulation: rolling back due to new penetration between bodies %s and %s\n",id1.c_str(),id2.c_str());
+              //if(lastMarginsRemaining.count(collpair) == 0)
+              //  printf("  no previous contact\n");
+              //else
+              //  printf("  previously had depth %g\n",lastMarginsRemaining[collpair]);
             }
             //PrintStatus(this,collpair,"Colliding objects","found collision at");
           }
           else {
             if(true || !didRollback) {
               string id1=ObjectName(collpair.first),id2=ObjectName(collpair.second);
-              printf("ODESimulation: rolling back due to increasing penetration between bodies %s and %s\n",id1.c_str(),id2.c_str());
-              if(lastMarginsRemaining.count(collpair) == 0)
-                printf("  margin shrank from no-contact to %g\n",marginsRemaining[collpair]);
-              else
-                printf("  margin shrank from %g to %g\n",lastMarginsRemaining[collpair],marginsRemaining[collpair]);
+              //printf("ODESimulation: rolling back due to increasing penetration between bodies %s and %s\n",id1.c_str(),id2.c_str());
+              //if(lastMarginsRemaining.count(collpair) == 0)
+              //  printf("  margin shrank from no-contact to %g\n",marginsRemaining[collpair]);
+              //else
+              //  printf("  margin shrank from %g to %g\n",lastMarginsRemaining[collpair],marginsRemaining[collpair]);
             }
           }
         }
   		  if(rollback && !lastState.IsOpen()) {
-          printf("ODESimulation: Rollback rejected because last state not saved\n");
+          //printf("ODESimulation: Rollback rejected because last state not saved\n");
           getchar();
           rollback = false;
   		  }
   		  if(rollback && timestep < 1e-6) {
-  		    printf("ODESimulation: Rollback rejected because timestep %g below minimum threshold\n",timestep);
+  		    //printf("ODESimulation: Rollback rejected because timestep %g below minimum threshold\n",timestep);
           //getchar();
 
           //TODO: DEBUG THIS PRINTOUT STUFF -- it changes the state of the adaptive time stepper
@@ -568,7 +568,7 @@ void ODESimulator::Step(Real dt)
   		  }
   	
   		  if(rollback) {
-          printf("ODESimulation: Rolling back at time %g, time step halved to %g\n",simTime,timestep*0.5);
+          //printf("ODESimulation: Rolling back at time %g, time step halved to %g\n",simTime,timestep*0.5);
           //PrintStatus(this,concernedObjects,"Backing up colliding objects","from");
           
           didRollback = true;
@@ -600,18 +600,18 @@ void ODESimulator::Step(Real dt)
           WriteState(lastState);
           for(size_t i=0;i<concernedObjects.size();i++) {
             if(marginsRemaining.count(concernedObjects[i]) == 0) {
-              printf("ODESimulation: collision %s - %s erased entirely\n",ObjectName(concernedObjects[i].first).c_str(),ObjectName(concernedObjects[i].second).c_str());
+              //printf("ODESimulation: collision %s - %s erased entirely\n",ObjectName(concernedObjects[i].first).c_str(),ObjectName(concernedObjects[i].second).c_str());
             }
             else {
               double d=marginsRemaining[concernedObjects[i]];
-              if(lastMarginsRemaining.count(concernedObjects[i])) 
-                printf("ODESimulation: collision %s - %s changed from no contact to depth %g\n",ObjectName(concernedObjects[i].first).c_str(),ObjectName(concernedObjects[i].second).c_str(),d);
-              else
-                printf("ODESimulation: collision %s - %s changed from depth %g to depth %g\n",ObjectName(concernedObjects[i].first).c_str(),ObjectName(concernedObjects[i].second).c_str(),lastMarginsRemaining[concernedObjects[i]],d);
+              //if(lastMarginsRemaining.count(concernedObjects[i])) 
+                //printf("ODESimulation: collision %s - %s changed from no contact to depth %g\n",ObjectName(concernedObjects[i].first).c_str(),ObjectName(concernedObjects[i].second).c_str(),d);
+              //else
+                //printf("ODESimulation: collision %s - %s changed from depth %g to depth %g\n",ObjectName(concernedObjects[i].first).c_str(),ObjectName(concernedObjects[i].second).c_str(),lastMarginsRemaining[concernedObjects[i]],d);
             }
           }
           if(didRollback)
-            printf("ODESimulation: Adaptive sub-step of size %g is valid, arriving at time %g.\n",timestep,simTime);
+            //printf("ODESimulation: Adaptive sub-step of size %g is valid, arriving at time %g.\n",timestep,simTime);
           //if(didRollback) {
           //  PrintStatus(this,concernedObjects,"Colliding objects","now at");
           //}
@@ -621,8 +621,8 @@ void ODESimulator::Step(Real dt)
           validTime += timestep;
           simTime += timestep;
           timestep = desiredTime-validTime;
-          if(didRollback)
-            printf("   reset time step to %g.\n",timestep);
+          //if(didRollback)
+            //printf("   reset time step to %g.\n",timestep);
           didRollback = false;
   		  }
   		  if(validTime >= desiredTime) break;
@@ -636,7 +636,7 @@ void ODESimulator::Step(Real dt)
         //PrintStatus(this,concernedObjects,"Colliding objects","post-step");
   		}
   		if(didRollback) {
-  		  printf("ODESimulation: Adaptive time step done, arrived at time %g.\n",simTime);
+  		  //printf("ODESimulation: Adaptive time step done, arrived at time %g.\n",simTime);
   		}
   	}
   	else {
@@ -669,12 +669,12 @@ void ODESimulator::Step(Real dt)
         }
   		}
   		if(rollback) {
-  			printf("ODESimulation: Warning, initial state has underlying meshes overlapping\n");
+  			//printf("ODESimulation: Warning, initial state has underlying meshes overlapping\n");
   			for(map<CollisionPair,double>::const_iterator i=marginsRemaining.begin();i!=marginsRemaining.end();i++) {
           if(i->second <= 0) {
     			  CollisionPair collpair = i->first;
             string id1=ObjectName(collpair.first),id2=ObjectName(collpair.second);
-            printf("  %s - %s\n",id1.c_str(),id2.c_str());
+            //printf("  %s - %s\n",id1.c_str(),id2.c_str());
           }
   			}
   			printf("Press enter to continue...\n");
