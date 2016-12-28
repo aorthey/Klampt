@@ -1,4 +1,4 @@
-#include "Interface/SimTestGUI.h"
+#include <Interface/SimTestGUI.h>
 #include <stdio.h>
 int main(int argc,const char** argv)
 {
@@ -8,7 +8,7 @@ int main(int argc,const char** argv)
     return 1;
   }
   GLUISimTestGUI gui(&backend,&world);
-  gui.SetWindowTitle("SimTest");
+  gui.SetWindowTitle("SimTest3.0");
   gui.Run();
   return 0;
 }

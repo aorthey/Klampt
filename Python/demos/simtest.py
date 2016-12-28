@@ -47,7 +47,7 @@ class MyGLViewer(GLRealtimeProgram):
         if self.forceApplicationMode:
             glDisable(GL_LIGHTING)
             glDisable(GL_DEPTH_TEST)
-            glColor3f(1,0.5,0)
+            glColor3f(0,0.5,0)
             glLineWidth(3.0)
             glBegin(GL_LINES)
             glVertex3fv(self.forceAnchorPoint)

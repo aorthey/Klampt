@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     //load settings from qsetings ini
     QCoreApplication::setOrganizationName("Klampt");
     QCoreApplication::setOrganizationDomain("klampt.org");
-    QCoreApplication::setApplicationName("SimTest");
+    QCoreApplication::setApplicationName("SimTest2");
     QCoreApplication::setApplicationVersion("0.6.2");
     QSettings ini(QSettings::IniFormat, QSettings::UserScope,
 		  QCoreApplication::organizationName(),

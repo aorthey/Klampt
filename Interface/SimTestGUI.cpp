@@ -229,6 +229,15 @@ void SimTestBackend::RenderWorld()
   if(drawEstimated) {
   }
 
+  glBegin(GL_LINES);
+  glDisable(GL_LIGHTING);
+  glColor3f(1,0,0);
+  glLineWidth(5.0);
+  glVertex3f(0.0f, 0.0f, 0.0f);
+  glVertex3f(50.0f, 50.0f, 50.0f);
+  glEnd();
+
+
   //draw collision feedback
   glDisable(GL_LIGHTING);
   glDisable(GL_BLEND);
