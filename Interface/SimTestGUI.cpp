@@ -229,14 +229,34 @@ void SimTestBackend::RenderWorld()
   if(drawEstimated) {
   }
 
-  glBegin(GL_LINES);
-  glDisable(GL_LIGHTING);
-  glColor3f(1,0,0);
-  glLineWidth(5.0);
-  glVertex3f(0.0f, 0.0f, 0.0f);
-  glVertex3f(50.0f, 50.0f, 50.0f);
-  glEnd();
+//orthograph
+  glEnable(GL_LIGHTING);
+  glDisable(GL_DEPTH_TEST);
 
+  Vector3 pos(1,1,0);
+  Vector3 dir(0,0,1);
+  Real length = 0.5;
+  Real linewidth=0.02;
+  GLColor cForce(1,0,0,0.2);
+
+  glPushMatrix();
+  glTranslate(pos);
+    
+  Real arrowLen = 3*linewidth,arrowWidth=1*linewidth;
+  glMaterialfv(GL_FRONT,GL_AMBIENT_AND_DIFFUSE,cForce);
+  drawCylinder(dir*length,linewidth);
+
+  glPushMatrix();
+  glMaterialfv(GL_FRONT,GL_AMBIENT_AND_DIFFUSE,cForce);
+  glTranslate(dir*length);
+  drawCone(dir*arrowLen,arrowWidth,8);
+  glPopMatrix();
+    
+  //drawCylinder(m*(1.0-len),linewidth);
+  //glTranslate((1.0-len));
+  glPopMatrix();
+      
+  glEnable(GL_DEPTH_TEST);
 
   //draw collision feedback
   glDisable(GL_LIGHTING);
