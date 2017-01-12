@@ -6,7 +6,7 @@ using namespace GLDraw;
 ViewIKGoal::ViewIKGoal()
 {
   lineColor.set(1,0,0);
-  linkColor.set(0.5,0.5,0.5,0.5);
+  linkColor.set(0.8,0.1,0.1);
   widgetSize = 0.1;
 }
 
@@ -72,10 +72,9 @@ void ViewIKGoal::DrawLink(const IKGoal& goal,ViewRobot& robotviewer,const Matrix
     T = robotviewer.robot->links[goal.destLink].T_World*T;
   }
 
-  glEnable(GL_LIGHTING);
+  glDisable(GL_LIGHTING);
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
-  glMaterialfv(GL_FRONT_AND_BACK,GL_AMBIENT_AND_DIFFUSE,linkColor.rgba);
   glPushMatrix();
   glMultMatrix(Matrix4(T));
   robotviewer.DrawLink_Local(goal.link);

@@ -85,7 +85,7 @@ bool ContactCSpace::IsFeasible(const Config& q)
 
   GetRobot()->UpdateConfig(q);
   if(!CheckContact()) {
-    printf("ContactCSpace:: Configuration fails distance check: %g > %g\n",ContactDistance(),settings->robotSettings[index].contactEpsilon*1.1);
+    //printf("ContactCSpace:: Configuration fails distance check: %g > %g\n",ContactDistance(),settings->robotSettings[index].contactEpsilon*1.1);
 #if DO_TIMING
     isFeasibleTime += timer.ElapsedTime();
 #endif //DO_TIMING
@@ -140,6 +140,7 @@ void ContactCSpace::AddContact(int link,const Vector3& localPos,const Vector3& w
   goal.localPosition = localPos;
   goal.SetFixedPosition(worldPos);
   goal.SetFreeRotation();
+  contactIK.push_back(goal);
 }
 
 void ContactCSpace::AddContact(int link,const vector<Vector3>& localPos,const vector<Vector3>& worldPos)
@@ -147,6 +148,7 @@ void ContactCSpace::AddContact(int link,const vector<Vector3>& localPos,const ve
   IKGoal goal;
   goal.link = link;
   goal.SetFromPoints(localPos,worldPos);
+  contactIK.push_back(goal);
 }
 
 void ContactCSpace::RemoveContact(int link)

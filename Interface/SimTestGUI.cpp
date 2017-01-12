@@ -229,34 +229,48 @@ void SimTestBackend::RenderWorld()
   if(drawEstimated) {
   }
 
+  ////////////////////////////////////////////
 //orthograph
-  glEnable(GL_LIGHTING);
-  glDisable(GL_DEPTH_TEST);
 
-  Vector3 pos(1,1,0);
-  Vector3 dir(0,0,1);
-  Real length = 0.5;
-  Real linewidth=0.02;
-  GLColor cForce(1,0,0,0.2);
 
-  glPushMatrix();
-  glTranslate(pos);
-    
-  Real arrowLen = 3*linewidth,arrowWidth=1*linewidth;
-  glMaterialfv(GL_FRONT,GL_AMBIENT_AND_DIFFUSE,cForce);
-  drawCylinder(dir*length,linewidth);
+  //for(int x = -3; x < 3; x++){
+  //  for(int y = -3; y < 3; y++){
+  //    for(double z = 0.2; z <= 2.5; z+=0.5){
+  //      Vector3 pos(x,y,z);
+  //      Vector3 dir(1,1,0);
+  //      Real length = 0.2;
+  //      Real linewidth=0.02;
+  //      GLColor cForce(1,1,1,0.7);
 
-  glPushMatrix();
-  glMaterialfv(GL_FRONT,GL_AMBIENT_AND_DIFFUSE,cForce);
-  glTranslate(dir*length);
-  drawCone(dir*arrowLen,arrowWidth,8);
-  glPopMatrix();
-    
-  //drawCylinder(m*(1.0-len),linewidth);
-  //glTranslate((1.0-len));
-  glPopMatrix();
+  //      glDisable(GL_LIGHTING);
+
+  //      glEnable(GL_BLEND); 
+  //      glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+  //      cForce.setCurrentGL();
+
+  //      glPushMatrix();
+
+  //      glTranslate(pos);
+  //      //glMaterialfv(GL_FRONT,GL_AMBIENT_AND_DIFFUSE,cForce);
+  //      drawCylinder(dir*length,linewidth);
+
+  //      glPushMatrix();
+
+  //      //glMaterialfv(GL_FRONT,GL_AMBIENT_AND_DIFFUSE,cForce);
+  //      Real arrowLen = 3*linewidth;
+  //      Real arrowWidth = 1*linewidth;
+  //      glTranslate(dir*length);
+  //      drawCone(dir*arrowLen,arrowWidth,8);
+
+  //      glPopMatrix();
+  //      glPopMatrix();
+  //    }
+  //  }
+  //}
       
-  glEnable(GL_DEPTH_TEST);
+  //glEnable(GL_DEPTH_TEST);
+  //glEnable(GL_LIGHTING);
+  //////////////////////////////////////////////
 
   //draw collision feedback
   glDisable(GL_LIGHTING);
