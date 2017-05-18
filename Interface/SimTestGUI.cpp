@@ -198,8 +198,8 @@ void SimTestBackend::ToggleSensorMeasurement(int sensorIndex,int measurement,int
 
 void SimTestBackend::RenderWorld()
 {
-  DEBUG_GL_ERRORS()
-  BaseT::RenderWorld();
+  DEBUG_GL_ERRORS();
+  //BaseT::RenderWorld();
 
   glEnable(GL_BLEND);
   allWidgets.Enable(&allRobotWidgets,drawPoser==1);

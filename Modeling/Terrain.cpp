@@ -68,7 +68,9 @@ bool Terrain::LoadGeometry(const char* fn)
   geomFile = fn;
   if(geometry.Load(geomFile)) {
     if(!geometry.Appearance()->tex1D && !geometry.Appearance()->tex2D) {
-      geometry.Appearance()->faceColor.set(0.8,0.6,0.2);
+      //geometry.Appearance()->faceColor.set(0.8,0.6,0.2);
+      //geometry.Appearance()->faceColor.set(0.8,0.2,0.2,0.9);
+      geometry.Appearance()->faceColor.set(0.8,0.2,0.2,0.5);
       geometry.Appearance()->texWrap = true;
       Texturizer tex;
       tex.texture = "checker";

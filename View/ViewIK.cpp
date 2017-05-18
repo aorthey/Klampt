@@ -8,6 +8,7 @@ ViewIKGoal::ViewIKGoal()
   lineColor.set(1,0,0);
   linkColor.set(0.8,0.1,0.1);
   widgetSize = 0.1;
+  lineWidth = 1;
 }
 
 //draws lines to the desired location
@@ -23,6 +24,7 @@ void ViewIKGoal::Draw(const IKGoal& goal,Robot& robot)
   if(goal.posConstraint == IKGoal::PosFixed) {
     glDisable(GL_LIGHTING);
     lineColor.setCurrentGL();
+    glLineWidth(lineWidth);
     glBegin(GL_LINES);
     glVertex3v(wp1);
     glVertex3v(wp2);
@@ -45,6 +47,7 @@ void ViewIKGoal::Draw(const IKGoal& goal,Robot& robot)
   }
   else if(goal.rotConstraint == IKGoal::RotAxis) {
     lineColor.setCurrentGL();
+    glLineWidth(lineWidth);
     glBegin(GL_LINES);
     glVertex3v(wp2);
     glVertex3v(wp2 + widgetSize*(Rref*goal.endRotation));

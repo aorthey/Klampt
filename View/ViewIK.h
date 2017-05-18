@@ -16,6 +16,7 @@ struct ViewIKGoal
   GLDraw::GLColor lineColor;
   GLDraw::GLColor linkColor;
   Real widgetSize;
+  Real lineWidth;
 };
 
 #endif

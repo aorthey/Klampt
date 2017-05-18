@@ -206,7 +206,7 @@ bool RigidObject::LoadGeometry(const char* fn)
 {
   geomFile = fn;
   //default appearance options
-  geometry.Appearance()->faceColor.set(0.4,0.2,0.8);
+  geometry.Appearance()->faceColor.set(0.8,0.8,0.8);
   if(geometry.Load(geomFile)) {
     return true;
   }

@@ -13,7 +13,7 @@ using namespace std;
 using namespace PrimitiveShape;
 
 string URDFConverter::packageRootPath("");
-string URDFConverter::primitiveMeshPath("data/objects/urdf_primitives/");
+string URDFConverter::primitiveMeshPath("/home/aorthey/git/orthoklampt/data/objects/urdf_primitives/");
 bool URDFConverter::useVisGeom = false;
 bool URDFConverter::flipYZ = false;
 
