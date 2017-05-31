@@ -743,7 +743,6 @@ bool SingleRobotCSpace::IsFeasible(const Config& x,int constraint)
 bool SingleRobotCSpace::IsFeasible(const Config& x)
 {
   if(!CheckJointLimits(x)) {
-    //printf("Configuration is not in joint limits\n");
     return false;
   }
   //this is already called in CheckJointLimits

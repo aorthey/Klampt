@@ -16,18 +16,15 @@
         <mesh filename="meshes/l_clav.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="0 1.5707963267949 0" xyz="0 0.0697 0.0261"/>
+ <collision>
+      <origin rpy="1.04719755 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.1525" radius="0.045"/>
+        <mesh filename="meshes/l_clav.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="1.0472 0 0" xyz="-0.005 -0.0074 -0.0538"/>
-      <geometry>
-        <box size="0.13 0.15 0.05"/>
-      </geometry>
-    </collision>
+ 
+    
+    
   </link>
   <link name="l_farm">
     <inertial>
@@ -41,18 +38,15 @@
         <mesh filename="meshes/l_farm.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="0 1.5708 0" xyz="0.0 0.065 0.004"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 -0.06 0"/>
       <geometry>
-        <cylinder length="0.125" radius="0.045"/>
+        <mesh filename="meshes/l_farm.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="0 0 0" xyz="0.001 0.015 -0.002"/>
-      <geometry>
-        <box size="0.135 0.1 0.045"/>
-      </geometry>
-    </collision>
+ 
+    
+    
   </link>
   <link name="l_foot">
     <inertial>
@@ -66,20 +60,17 @@
         <mesh filename="meshes/l_foot.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <!-- bottom -->
-    <collision group="default">
-      <origin rpy="0 0 0" xyz="0.048 0 -0.056119"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.26 0.124887 0.05"/>
+        <mesh filename="meshes/l_foot.dae" scale="1 1 1"/>
       </geometry>
     </collision>
+ 
+    <!-- bottom -->
+    
     <!-- ankle FIXME: adding this collision body destabilizes robot, shouldn't
-        <collision group="other">
-          <origin xyz="0.0 0 -0.0528735" rpy="0 0 0"/>
-          <geometry>
-            <cylinder radius="0.0373" length="0.037827"/>
-          </geometry>
-        </collision>
+        
         -->
   </link>
   <link name="l_hand">
@@ -94,18 +85,15 @@
         <mesh filename="meshes/l_hand.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="1.5707963267949 0 0" xyz="0.001 0.1 0.01"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.05" radius="0.03"/>
+        <mesh filename="meshes/l_hand.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="0 0 0" xyz="0.001 0.05 0.01"/>
-      <geometry>
-        <box size="0.13 0.09 0.07"/>
-      </geometry>
-    </collision>
+ 
+    
+    
   </link>
   <link name="l_larm">
     <inertial>
@@ -119,18 +107,15 @@
         <mesh filename="meshes/l_larm.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="1.5707963267949 0 0" xyz="0.001 0.127 0.00"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.125" radius="0.045"/>
+        <mesh filename="meshes/l_larm.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="0 0 0" xyz="0.001 0.051 0.0"/>
-      <geometry>
-        <box size="0.135 0.15 0.06"/>
-      </geometry>
-    </collision>
+ 
+    
+    
   </link>
   <link name="l_lglut">
     <inertial>
@@ -144,18 +129,15 @@
         <mesh filename="meshes/l_lglut.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="1.5707963267949 0 0" xyz="0.049968 0.022488 -0.0501165"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.060306" radius="0.02009687"/>
+        <mesh filename="meshes/l_lglut.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="0 1.5707963267949 0" xyz="0 0 0"/>
-      <geometry>
-        <cylinder length="0.12" radius="0.02"/>
-      </geometry>
-    </collision>
+ 
+    
+    
   </link>
   <link name="l_lleg">
     <inertial>
@@ -169,12 +151,14 @@
         <mesh filename="meshes/l_lleg.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="0 0.10 0" xyz="0.02 0.00295 -0.18"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.40" radius="0.07"/>
+        <mesh filename="meshes/l_lleg.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
+ 
+    
   </link>
   <link name="l_scap">
     <inertial>
@@ -188,18 +172,15 @@
         <mesh filename="meshes/l_scap.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="1.5707963267949 0 0" xyz="0.001 0.12651 0.01521"/>
+ <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.125" radius="0.045"/>
+        <mesh filename="meshes/l_scap.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="0 0 0" xyz="0.001 0.05 0.016"/>
-      <geometry>
-        <box size="0.15 0.15 0.06"/>
-      </geometry>
-    </collision>
+ 
+    
+    
   </link>
   <link name="l_talus">
     <inertial>
@@ -213,18 +194,15 @@
         <mesh filename="meshes/l_talus.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="0 1.5707963267949 0" xyz="0 0 0"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.029542" radius="0.010181"/>
+        <mesh filename="meshes/l_talus.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="1.5707963267949 0 0" xyz="0 0 0"/>
-      <geometry>
-        <cylinder length="0.010059" radius="0.010348"/>
-      </geometry>
-    </collision>
+ 
+    
+    
   </link>
   <link name="l_uarm">
     <inertial>
@@ -238,18 +216,15 @@
         <mesh filename="meshes/l_uarm.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="0 1.5708 0" xyz="0.001 0.111 0.0"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.125" radius="0.045"/>
+        <mesh filename="meshes/l_uarm.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="0 1.5707963267949 0" xyz="0.001 0.043 0.01"/>
-      <geometry>
-        <box size="0.04 0.07 0.13"/>
-      </geometry>
-    </collision>
+ 
+    
+    
   </link>
   <link name="l_uglut">
     <inertial>
@@ -263,18 +238,15 @@
         <mesh filename="meshes/l_uglut.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="0 1.5707963267949 0" xyz="0 0 0"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.078396" radius="0.019096"/>
+        <mesh filename="meshes/l_uglut.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <cylinder length="0.080842" radius="0.019841"/>
-      </geometry>
-    </collision>
+ 
+    
+    
   </link>
   <link name="l_uleg">
     <inertial>
@@ -288,30 +260,17 @@
         <mesh filename="meshes/l_uleg.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="0 0 0" xyz="-0.0179 0.02085 -0.13"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.10" radius="0.1"/>
+        <mesh filename="meshes/l_uleg.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="0 -0.3 0" xyz="-0.03 0.01 -0.23"/>
-      <geometry>
-        <cylinder length="0.15" radius="0.07"/>
-      </geometry>
-    </collision>
-    <collision group="other">
-      <origin rpy="0 0.3 0" xyz="-0.005 0.01 -0.23"/>
-      <geometry>
-        <cylinder length="0.15" radius="0.07"/>
-      </geometry>
-    </collision>
-    <collision group="other">
-      <origin rpy="-0.25 0 0" xyz="-0.02 0.03 -0.23"/>
-      <geometry>
-        <cylinder length="0.15" radius="0.07"/>
-      </geometry>
-    </collision>
+ 
+    
+    
+    
+    
   </link>
   <link name="ltorso">
     <inertial>
@@ -325,25 +284,17 @@
         <mesh filename="meshes/ltorso.dae" scale="1 1 1"/>
       </geometry>
     </visual>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/ltorso.dae" scale="1 1 1"/>
+      </geometry>
+    </collision>
+ 
     <!-- this part is completely internal
-        <collision group="default">
-          <origin rpy="0 0 0" xyz="0 0 0.039762"/>
-          <geometry>
-            <cylinder radius="0.025918" length="0.076922"/>
-          </geometry>
-        </collision>
-        <collision group="other">
-          <origin rpy="1.5707963267949 0 0" xyz="0 0.0250065 0.09025"/>
-          <geometry>
-            <cylinder radius="0.014828" length="0.020367"/>
-          </geometry>
-        </collision>
-        <collision group="other">
-          <origin rpy="1.5707963267949 0 0" xyz="0 -0.0248895 0.09025"/>
-          <geometry>
-            <cylinder radius="0.014828" length="0.020169"/>
-          </geometry>
-        </collision>
+        
+        
+        
         -->
   </link>
   <link name="mtorso">
@@ -358,24 +309,16 @@
         <mesh filename="meshes/mtorso.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="1.5707963267949 0 0" xyz="0 0 0"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.03" radius="0.017"/>
+        <mesh filename="meshes/mtorso.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="0 1.5707963267949 0" xyz="0.0285 0 0.05"/>
-      <geometry>
-        <cylinder length="0.02" radius="0.015"/>
-      </geometry>
-    </collision>
-    <collision group="other">
-      <origin rpy="0 1.5707963267949 0" xyz="-0.0285 0 0.05"/>
-      <geometry>
-        <cylinder length="0.02" radius="0.015"/>
-      </geometry>
-    </collision>
+ 
+    
+    
+    
   </link>
   <link name="pelvis">
     <inertial>
@@ -389,36 +332,18 @@
         <mesh filename="meshes/pelvis.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="1.5707963267949 0 0" xyz="0.046 0.0 -0.02"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.06" radius="0.11"/>
+        <mesh filename="meshes/pelvis.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="1.5707963267949 0 0" xyz="-0.03 0.0 -0.02"/>
-      <geometry>
-        <cylinder length="0.06" radius="0.11"/>
-      </geometry>
-    </collision>
-    <collision group="other">
-      <origin rpy="0 0 0" xyz="0.01 0.042 0.09"/>
-      <geometry>
-        <cylinder length="0.05" radius="0.16"/>
-      </geometry>
-    </collision>
-    <collision group="other">
-      <origin rpy="0 0 0" xyz="0.01 -0.042 0.09"/>
-      <geometry>
-        <cylinder length="0.05" radius="0.16"/>
-      </geometry>
-    </collision>
-    <collision group="other">
-      <origin rpy="0 0 0" xyz="-0.1 0 -0.05"/>
-      <geometry>
-        <box size="0.1 0.15 0.2"/>
-      </geometry>
-    </collision>
+ 
+    
+    
+    
+    
+    
   </link>
   <link name="r_clav">
     <inertial>
@@ -432,18 +357,15 @@
         <mesh filename="meshes/r_clav.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="0 1.5707963267949 0" xyz="0 -0.0697 0.0261"/>
+ <collision>
+      <origin rpy="-1.04719755 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.1525" radius="0.045"/>
+        <mesh filename="meshes/r_clav.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="-1.0472 0 0" xyz="-0.005 0.0074 -0.0538"/>
-      <geometry>
-        <box size="0.13 0.15 0.05"/>
-      </geometry>
-    </collision>
+ 
+    
+    
   </link>
   <link name="r_farm">
     <inertial>
@@ -457,18 +379,15 @@
         <mesh filename="meshes/r_farm.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="0 1.5708 0" xyz="0.0 -0.065 0.004"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0.06 0"/>
       <geometry>
-        <cylinder length="0.125" radius="0.045"/>
+        <mesh filename="meshes/r_farm.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="0 0 0" xyz="0.001 -0.015 -0.002"/>
-      <geometry>
-        <box size="0.135 0.1 0.045"/>
-      </geometry>
-    </collision>
+ 
+    
+    
   </link>
   <link name="r_foot">
     <inertial>
@@ -482,20 +401,17 @@
         <mesh filename="meshes/r_foot.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <!-- bottom -->
-    <collision group="default">
-      <origin rpy="0 0 0" xyz="0.048 0 -0.056119"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.26 0.124887 0.05"/>
+        <mesh filename="meshes/r_foot.dae" scale="1 1 1"/>
       </geometry>
     </collision>
+ 
+    <!-- bottom -->
+    
     <!-- ankle FIXME: adding this collision body destabilizes robot, shouldn't
-        <collision group="other">
-          <origin xyz="0.0 0 -0.0528735" rpy="0 0 0"/>
-          <geometry>
-            <cylinder radius="0.0373" length="0.037827"/>
-          </geometry>
-        </collision>
+        
         -->
   </link>
   <link name="r_hand">
@@ -510,18 +426,15 @@
         <mesh filename="meshes/r_hand.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="1.5707963267949 0 0" xyz="0.001 -0.1 0.01"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.05" radius="0.03"/>
+        <mesh filename="meshes/r_hand.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="0 0 0" xyz="0.001 -0.05 0.01"/>
-      <geometry>
-        <box size="0.13 0.09 0.07"/>
-      </geometry>
-    </collision>
+ 
+    
+    
   </link>
   <link name="r_larm">
     <inertial>
@@ -535,18 +448,15 @@
         <mesh filename="meshes/r_larm.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="1.5707963267949 0 0" xyz="0.001 -0.127 0.00"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.125" radius="0.045"/>
+        <mesh filename="meshes/r_larm.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="0 0 0" xyz="0.001 -0.051 0.0"/>
-      <geometry>
-        <box size="0.135 0.15 0.06"/>
-      </geometry>
-    </collision>
+ 
+    
+    
   </link>
   <link name="r_lglut">
     <inertial>
@@ -560,18 +470,15 @@
         <mesh filename="meshes/r_lglut.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="1.5707963267949 0 0" xyz="0.049968 -0.022488 -0.0501165"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.060306" radius="0.02009687"/>
+        <mesh filename="meshes/r_lglut.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="0 1.5707963267949 0" xyz="0 0 0"/>
-      <geometry>
-        <cylinder length="0.12" radius="0.02"/>
-      </geometry>
-    </collision>
+ 
+    
+    
   </link>
   <link name="r_lleg">
     <inertial>
@@ -585,12 +492,14 @@
         <mesh filename="meshes/r_lleg.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="0 0.10 0" xyz="0.02 -0.00295 -0.18"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.40" radius="0.07"/>
+        <mesh filename="meshes/r_lleg.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
+ 
+    
   </link>
   <link name="r_scap">
     <inertial>
@@ -604,18 +513,15 @@
         <mesh filename="meshes/r_scap.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="1.5707963267949 0 0" xyz="0.001 -0.12651 0.01521"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.125" radius="0.045"/>
+        <mesh filename="meshes/r_scap.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="0 0 0" xyz="0.001 -0.05 0.016"/>
-      <geometry>
-        <box size="0.15 0.15 0.06"/>
-      </geometry>
-    </collision>
+ 
+    
+    
   </link>
   <link name="r_talus">
     <inertial>
@@ -629,18 +535,15 @@
         <mesh filename="meshes/r_talus.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="0 1.5707963267949 0" xyz="0 0 0"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.029542" radius="0.010181"/>
+        <mesh filename="meshes/r_talus.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="1.5707963267949 0 0" xyz="0 0 0"/>
-      <geometry>
-        <cylinder length="0.010059" radius="0.010348"/>
-      </geometry>
-    </collision>
+ 
+    
+    
   </link>
   <link name="r_uarm">
     <inertial>
@@ -654,18 +557,15 @@
         <mesh filename="meshes/r_uarm.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="0 1.5708 0" xyz="0.001 -0.111 0.0"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.125" radius="0.045"/>
+        <mesh filename="meshes/r_uarm.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="0 1.5707963267949 0" xyz="0.001 -0.043 0.01"/>
-      <geometry>
-        <box size="0.04 0.07 0.13"/>
-      </geometry>
-    </collision>
+ 
+    
+    
   </link>
   <link name="r_uglut">
     <inertial>
@@ -679,18 +579,15 @@
         <mesh filename="meshes/r_uglut.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="0 1.5707963267949 0" xyz="0 0 0"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.078396" radius="0.019096"/>
+        <mesh filename="meshes/r_uglut.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <cylinder length="0.080842" radius="0.019841"/>
-      </geometry>
-    </collision>
+ 
+    
+    
   </link>
   <link name="r_uleg">
     <inertial>
@@ -704,30 +601,17 @@
         <mesh filename="meshes/r_uleg.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="0 0 0" xyz="-0.0179 -0.02085 -0.13"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.10" radius="0.1"/>
+        <mesh filename="meshes/r_uleg.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="0 -0.3 0" xyz="-0.03 -0.01 -0.23"/>
-      <geometry>
-        <cylinder length="0.15" radius="0.07"/>
-      </geometry>
-    </collision>
-    <collision group="other">
-      <origin rpy="0 0.3 0" xyz="-0.005 -0.01 -0.23"/>
-      <geometry>
-        <cylinder length="0.15" radius="0.07"/>
-      </geometry>
-    </collision>
-    <collision group="other">
-      <origin rpy="0.25 0 0" xyz="-0.02 -0.03 -0.23"/>
-      <geometry>
-        <cylinder length="0.15" radius="0.07"/>
-      </geometry>
-    </collision>
+ 
+    
+    
+    
+    
   </link>
   <link name="utorso">
     <inertial>
@@ -741,24 +625,16 @@
         <mesh filename="meshes/utorso.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <collision group="default">
-      <origin rpy="0 -0 0" xyz="0.0446 0 0.1869"/>
+ <collision>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.3188 0.24 0.3162"/>
+        <mesh filename="meshes/utorso.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-    <collision group="other">
-      <origin rpy="-0.5236 0 0" xyz="0.024 0.16 0.18"/>
-      <geometry>
-        <cylinder length="0.22375" radius="0.0363"/>
-      </geometry>
-    </collision>
-    <collision group="other">
-      <origin rpy="0.5236 0 0" xyz="0.024 -0.16 0.18"/>
-      <geometry>
-        <cylinder length="0.22375" radius="0.0363"/>
-      </geometry>
-    </collision>
+ 
+    
+    
+    
   </link>
   <joint name="back_lbz" type="revolute">
     <origin rpy="0 -0 0" xyz="-0.0125 0 0"/>
@@ -1043,6 +919,13 @@
         <box size="0.01 0.01 0.01"/>
       </geometry>
     </visual>
+ <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+ 
   </link>
   <joint name="imu_joint" type="fixed">
     <parent link="pelvis"/>
@@ -1243,7 +1126,7 @@
       <update_rate>1000.0</update_rate>
       <always_on>1</always_on>
       <contact>
-        <collision>r_foot_collision</collision>
+        
         <topic>/r_foot_contact</topic>
       </contact>
     </sensor>
@@ -1254,7 +1137,7 @@
       <update_rate>1000.0</update_rate>
       <always_on>1</always_on>
       <contact>
-        <collision>l_foot_collision</collision>
+        
         <topic>/l_foot_contact</topic>
       </contact>
     </sensor>
@@ -1510,18 +1393,24 @@
         <color rgba="0.9098 0.44314 0.031373 1"/>
       </material>
     </visual>
-    <collision group="default">
+ <collision>
       <origin rpy="0 0 0" xyz="-0.0503 0 -0.00195"/>
       <geometry>
         <box size="0.1311 0.12 0.0591"/>
       </geometry>
-    </collision>
-    <collision group="other">
-      <origin rpy="0 0 0" xyz="-0.093 0 0.0868"/>
+      <!--
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.0468 0.12 0.1184"/>
+        <mesh filename="data/multisense_sl_description/meshes/head.dae"/>
       </geometry>
+      -->
+      <material name="">
+        <color rgba="0.9098 0.44314 0.031373 1"/>
+      </material>
     </collision>
+ 
+    
+    
   </link>
   <link name="hokuyo_link">
     <inertial>
@@ -1549,18 +1438,26 @@
         <color rgba="0.72941 0.35686 0.023529 1"/>
       </material>
     </visual>
-    <collision group="default">
+ <collision>
+      <!--origin xyz="0.065774 -0.001163 -0.08809" rpy="0 0 0" /-->
+      <!--origin xyz="0.045 -0.001163 -0.08809" rpy="-0.314 0 0" /-->
       <origin rpy="0 0 0" xyz="0.01885 0 -0.02119"/>
       <geometry>
         <box size="0.08 0.06 0.04238"/>
       </geometry>
-    </collision>
-    <collision group="other">
-      <origin rpy="0 0 0" xyz="0.03 0 0.0235"/>
+      <!--
+      <origin rpy="-0.314 0 0" xyz="0.045 -0.0261018277 -0.08342369"/>
       <geometry>
-        <cylinder length="0.047" radius="0.024425"/>
+        <mesh filename="data/multisense_sl_description/meshes/head_camera.dae"/>
       </geometry>
+      -->
+      <material name="">
+        <color rgba="0.72941 0.35686 0.023529 1"/>
+      </material>
     </collision>
+ 
+    
+    
   </link>
   <gazebo reference="head">
     <mu1>0.9</mu1>
@@ -1805,6 +1702,13 @@
         <box size="0.01 0.01 0.01"/>
       </geometry>
     </visual>
+ <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+ 
   </link>
   <joint name="head_imu_joint" type="fixed">
     <parent link="head"/>

@@ -1143,18 +1143,19 @@ void GLUISimTestGUI::Handle_Keypress(unsigned char c,int x,int y)
 
 bool GLUISimTestGUI::OnCommand(const string& cmd,const string& args)
 {
-  if(cmd=="update_config") {
-    UpdateGUI();
-    return true;
-  }
-  else if(cmd=="update_sim_time") {
-    double time;
-    if(LexicalCast<double>(args,time)) {
-      MovieUpdate(time);
-    }
-    return true;
-  }
-  else return BaseT::OnCommand(cmd,args);
+  //if(cmd=="update_config") {
+  //  UpdateGUI();
+  //  return true;
+  //}
+  //else if(cmd=="update_sim_time") {
+  //  double time;
+  //  if(LexicalCast<double>(args,time)) {
+  //    MovieUpdate(time);
+  //  }
+  //  return true;
+  //}
+  //else 
+  return BaseT::OnCommand(cmd,args);
 }
 
 
