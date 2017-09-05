@@ -70,6 +70,7 @@ class ODESimulator
   ODESimulatorSettings& GetSettings() { return settings; }
   void AddTerrain(Terrain& terr);
   void AddRobot(Robot& robot);
+  void DeleteRobot(const char* s);
   void AddObject(RigidObject& object);
   void Step(Real dt);
   void StepDynamics(Real dt);

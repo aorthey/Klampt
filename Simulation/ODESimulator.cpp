@@ -285,6 +285,15 @@ void ODESimulator::AddRobot(Robot& robot)
       }
     }
 }
+void ODESimulator::DeleteRobot(const char* s)
+{
+  for(size_t i=0;i<robots.size();i++)
+    if(strcmp(s,robots.at(i)->robot.name.c_str())==0){
+      std::cout << "deleting robot " << robots.at(i)->robot.name << std::endl;
+      robots.erase(robots.begin() + i);
+      break;
+    }
+}
 
 void ODESimulator::AddObject(RigidObject& object)
 {
