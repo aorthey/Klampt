@@ -2285,7 +2285,7 @@ bool Robot::LoadURDF(const char* fn)
 	//Get content from the Willow Garage parser
 	boost::shared_ptr<urdf::ModelInterface> parser = urdf::parseURDF(s);
 	if(!parser) {
-	  fprintf(stderr,"Robot::LoadURDF: error parsing XML\n");
+	  //fprintf(stderr,"Robot::LoadURDF: error parsing XML\n");
 	  return false;
 	}
 	boost::shared_ptr<urdf::Link> root_link = parser->root_link_;
@@ -2520,8 +2520,8 @@ bool Robot::LoadURDF(const char* fn)
 	  }
 	}
 
-	cout << "Link size: " << links_size << endl;
-	cout << "Joint size: " << joints_size << endl;
+	//cout << "Link size: " << links_size << endl;
+	//cout << "Joint size: " << joints_size << endl;
 
 	//Feed the information from parser to required vectors in ROB format
 	//The following vectors have the same dimension of the links vector

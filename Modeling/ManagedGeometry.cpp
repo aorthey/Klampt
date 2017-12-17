@@ -126,8 +126,8 @@ bool ManagedGeometry::LoadNoCache(const std::string& filename)
       Timer timer;
       geometry = new Geometry::AnyCollisionGeometry3D();
       if(!geometry->Load(fn)) {
-        fprintf(stderr,"ManagedGeometry: Error loading geometry file %s\n",fn);
-	geometry = NULL;
+        //fprintf(stderr,"ManagedGeometry: Error loading geometry file %s\n",fn);
+        geometry = NULL;
         return false;
       }
       double t = timer.ElapsedTime();

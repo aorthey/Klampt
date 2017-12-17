@@ -33,6 +33,7 @@ const char* special_map(int k) {
   case GLUT_KEY_END: return "end";
   case GLUT_KEY_INSERT: return "insert";
   default:
+    //std::cout << "key:" << k << std::endl;
     return "unknown_key";
   }
 }

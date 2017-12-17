@@ -132,7 +132,7 @@ bool GenericGUIBase::SendMessage(const AnyCollection& msg)
   }
   //cout<<"GUI->Backend "<<msg<<endl;
   if(!backend->ProcessMessage(msg)) {
-    cout<<"GUI->Backend Message "<<msg<<" not processed"<<endl;
+    //cout<<"GUI->Backend Message "<<msg<<" not processed"<<endl;
     return false;
   }
   return true;

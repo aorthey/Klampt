@@ -110,14 +110,14 @@ bool XmlRobot::GetRobot(Robot& robot)
   }
   string sfn = path + string(fn);
   if(!robot.Load(sfn.c_str())) {
-    fprintf(stderr,"XmlRobot: error loading %s, trying absolute path\n",sfn.c_str());
+    //fprintf(stderr,"XmlRobot: error loading %s, trying absolute path\n",sfn.c_str());
     //try absolute path
     if(!robot.Load(fn)) {
       fprintf(stderr,"XmlRobot: error loading %s\n",sfn.c_str());
       return false;
     }
-    else
-      fprintf(stderr,"XmlRobot: absolute path succeeded\n");
+    //else
+      //fprintf(stderr,"XmlRobot: absolute path succeeded\n");
   }
   Vector q;
   if(e->QueryValueAttribute("config",&q)==TIXML_SUCCESS) {
@@ -175,13 +175,13 @@ bool XmlRigidObject::GetRigidObject(RigidObject& obj)
   if(fn) {
     string sfn = path + string(fn);
     if(!obj.Load(sfn.c_str())) {
-      fprintf(stderr,"XmlRigidObject: error loading %s, trying absolute path\n",sfn.c_str());
+      //fprintf(stderr,"XmlRigidObject: error loading %s, trying absolute path\n",sfn.c_str());
       if(!obj.Load(fn)) {
-	fprintf(stderr,"XmlRigidObject: error loading obj file %s\n",sfn.c_str());
-	return false;
+        fprintf(stderr,"XmlRigidObject: error loading obj file %s\n",sfn.c_str());
+        return false;
       }
-      else
-	fprintf(stderr,"XmlRigidObject: absolute path succeeded\n");
+      //else
+        //fprintf(stderr,"XmlRigidObject: absolute path succeeded\n");
     }
   }
   TiXmlElement* geom=e->FirstChildElement("geometry");

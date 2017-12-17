@@ -182,7 +182,7 @@ bool RigidObject::Load(const char* fn)
   }
   else {
     if(!LoadGeometry(fn)) {
-      printf("LoadGeometry %s failed\n",fn);
+      //printf("LoadGeometry %s failed\n",fn);
       return false;
     }
     T.setIdentity();
@@ -193,10 +193,10 @@ bool RigidObject::Load(const char* fn)
     kRestitution = 0.5;
     kStiffness=Inf;
     kDamping=Inf;
-    if(ext)
-      fprintf(stderr,"Warning, loading object from .%s file %s.  Setting COM and inertia matrix from geometry.\n",ext,fn);
-    else
-      fprintf(stderr,"Warning, loading object from file %s.  Setting COM and inertia matrix from geometry.\n",fn);
+    //if(ext)
+    //  fprintf(stderr,"Warning, loading object from .%s file %s.  Setting COM and inertia matrix from geometry.\n",ext,fn);
+    //else
+    //  fprintf(stderr,"Warning, loading object from file %s.  Setting COM and inertia matrix from geometry.\n",fn);
     SetMassFromGeometry(1.0);
     return true;
   }

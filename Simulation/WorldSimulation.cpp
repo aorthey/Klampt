@@ -228,7 +228,7 @@ WorldSimulation::WorldSimulation()
 
 void WorldSimulation::Init(RobotWorld* _world)
 {
-  printf("Creating WorldSimulation\n");
+  //printf("Creating WorldSimulation\n");
   time = 0;
   world = _world;
   odesim.SetGravity(Vector3(0,0,-9.8));
@@ -276,7 +276,7 @@ void WorldSimulation::Init(RobotWorld* _world)
       command.actuators[j].qdes = robot->GetDriverValue(j);
     }
   }
-  printf("Done.\n");
+  //printf("Done.\n");
 }
 
 void WorldSimulation::OnAddModel()
