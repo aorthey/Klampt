@@ -32,7 +32,7 @@ using namespace GLDraw;
 #endif //HAVE_GLUT
 
 #define SHOW_VIEW_TARGET(secs) {\
-  show_view_target=1; \
+  show_view_target=0; \
   t_hide_view_target=timer.LastElapsedTime()+secs; \
   SendPauseIdle(0);				   \
 }

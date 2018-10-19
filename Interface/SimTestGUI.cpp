@@ -968,12 +968,12 @@ bool GLUISimTestGUI::Initialize()
 				    "{type:widget_value,widget:driver,value:_0}","set_driver","_0",
 				    "{type:widget_value,widget:driver_value,value:_0}","set_driver_value","_0",
   };
-  for(int i=0;i<NR;i++) {
-    AnyCollection c;
-    bool res=c.read(rules[i*3]);
-    Assert(res == true);
-    AddCommandRule(c,rules[i*3+1],rules[i*3+2]);
-  }
+  //for(int i=0;i<NR;i++) {
+  //  AnyCollection c;
+  //  bool res=c.read(rules[i*3]);
+  //  Assert(res == true);
+  //  AddCommandRule(c,rules[i*3+1],rules[i*3+2]);
+  //}
   return true;
 }
 
@@ -1127,14 +1127,14 @@ void GLUISimTestGUI::Handle_Keypress(unsigned char c,int x,int y)
 {
   switch(c) {
   case 'h':
-    printf("Keyboard help:\n");
-    printf("[space]: sends the milestone to the controller\n");
-    printf("s: toggles simulation\n");
-    printf("a: advances the simulation one step\n");
-    printf("c: in IK mode, constrains link rotation and position\n");
-    printf("d: in IK mode, deletes an ik constraint\n");
-    printf("v: save current viewport\n");
-    printf("V: load viewport\n");
+    //printf("Keyboard help:\n");
+    //printf("[space]: sends the milestone to the controller\n");
+    //printf("s: toggles simulation\n");
+    //printf("a: advances the simulation one step\n");
+    //printf("c: in IK mode, constrains link rotation and position\n");
+    //printf("d: in IK mode, deletes an ik constraint\n");
+    //printf("v: save current viewport\n");
+    //printf("V: load viewport\n");
     break;
   default:
     BaseT::Handle_Keypress(c,x,y);

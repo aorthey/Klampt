@@ -250,8 +250,10 @@ pair<int,int> WorldPlannerSettings::CheckCollision(RobotWorld& world,const vecto
     for(size_t j=i+1;j<activeids.size();j++) {
       if(collisionEnabled(activeids[i],activeids[j]) || collisionEnabled(activeids[i],activeids[i])) {
         if(bbs[i].intersects(bbs[j])) {
-          if(::CheckCollision(geoms[i],geoms[j],tol))
+          if(::CheckCollision(geoms[i],geoms[j],tol)){
+            // std::cout << "collision: " << activeids.at(i) << " and " << activeids.at(j)  << " tol: " << tol << std::endl;
             return pair<int,int>(activeids[i],activeids[j]);
+          }
         }
       }
     }

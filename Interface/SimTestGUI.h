@@ -12,9 +12,9 @@
 using namespace Math3D;
 using namespace GLDraw;
 
-#define GLUT_LEFT_BUTTON 0
-#define GLUT_MIDDLE_BUTTON 1
-#define GLUT_RIGHT_BUTTON 2
+#define KLAMPT_GLUT_LEFT_BUTTON 0
+#define KLAMPT_GLUT_MIDDLE_BUTTON 1
+#define KLAMPT_GLUT_RIGHT_BUTTON 2
 
 
 struct SensorPlot
@@ -120,17 +120,17 @@ public:
   virtual void DoFreeDrag(int dx,int dy,int button);
   virtual void DoCtrlDrag(int dx,int dy,int button)
   {
-    if(button == GLUT_LEFT_BUTTON)  DragPan(dx,dy);
+    if(button == KLAMPT_GLUT_LEFT_BUTTON)  DragPan(dx,dy);
   }
   
   virtual void DoAltDrag(int dx,int dy,int button)
   {
-    if(button == GLUT_LEFT_BUTTON)  DragZoom(dx,dy);
+    if(button == KLAMPT_GLUT_LEFT_BUTTON)  DragZoom(dx,dy);
   }
 
   virtual void DoShiftDrag(int dx,int dy,int button)
   {
-    if(button == GLUT_LEFT_BUTTON) { camera.dist *= (1 + 0.01*Real(dy)); SendRefresh(); }
+    if(button == KLAMPT_GLUT_LEFT_BUTTON) { camera.dist *= (1 + 0.01*Real(dy)); SendRefresh(); }
   }
 };
 
