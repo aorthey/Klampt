@@ -833,110 +833,110 @@ bool GLUISimTestGUI::Initialize()
 
   glui = GLUI_Master.create_glui_subwindow(main_window,GLUI_SUBWINDOW_RIGHT);
   glui->set_main_gfx_window(main_window);
-  AddControl(glui->add_button("Simulate"),"simulate");
-  AddControl(glui->add_button("Reset"),"reset");
-  //we're going to manually intercept this one to resize the screen and start movie mode
-  save_movie_button = glui->add_button("Save movie");
-  AddControl(save_movie_button,"");
-  AddControl(glui->add_checkbox("Log simulation state"),"do_logging");
-  AddControl(glui->add_checkbox("Log contact state"),"do_contact_state_logging");
-  AddControl(glui->add_checkbox("Log contact wrenches"),"do_contact_wrench_logging");
-  GLUI_Panel* panel = glui->add_rollout("Input/output");
-  AddControl(glui->add_edittext_to_panel(panel,"File"),"load_text");
-  AddControl(glui->add_button_to_panel(panel,"Load"),"load_file");
-  AddControl(glui->add_button_to_panel(panel,"Save state"),"save_state");
+  //AddControl(glui->add_button("Simulate"),"simulate");
+  //AddControl(glui->add_button("Reset"),"reset");
+  ////we're going to manually intercept this one to resize the screen and start movie mode
+  //save_movie_button = glui->add_button("Save movie");
+  //AddControl(save_movie_button,"");
+  //AddControl(glui->add_checkbox("Log simulation state"),"do_logging");
+  //AddControl(glui->add_checkbox("Log contact state"),"do_contact_state_logging");
+  //AddControl(glui->add_checkbox("Log contact wrenches"),"do_contact_wrench_logging");
+  // GLUI_Panel* panel = glui->add_rollout("Input/output");
+  // AddControl(glui->add_edittext_to_panel(panel,"File"),"load_text");
+  // AddControl(glui->add_button_to_panel(panel,"Load"),"load_file");
+  // AddControl(glui->add_button_to_panel(panel,"Save state"),"save_state");
 
-  AddControl(glui->add_checkbox("Force application mode"),"force_application_mode");
-  GLUI_Checkbox* checkbox = glui->add_checkbox("Draw poser");
-  checkbox->set_int_val(1);
-  AddControl(checkbox,"draw_poser");
-  checkbox = glui->add_checkbox("Draw desired");
-  AddControl(checkbox,"draw_desired");
-  checkbox = glui->add_checkbox("Draw estimated");
-  AddControl(checkbox,"draw_estimated");
-  checkbox = glui->add_checkbox("Draw bboxes");
-  AddControl(checkbox,"draw_bbs");
-  checkbox = glui->add_checkbox("Draw contacts");
-  AddControl(checkbox,"draw_contacts");
-  checkbox = glui->add_checkbox("Draw wrenches");
-  checkbox->set_int_val(1);
-  AddControl(checkbox,"draw_wrenches");
-  checkbox = glui->add_checkbox("Draw expanded");
-  AddControl(checkbox,"draw_expanded");
-  checkbox = glui->add_checkbox("Draw time");
-  AddControl(checkbox,"draw_time");
+  //AddControl(glui->add_checkbox("Force application mode"),"force_application_mode");
+  // GLUI_Checkbox* checkbox = glui->add_checkbox("Draw poser");
+  // checkbox->set_int_val(1);
+  ///AddControl(checkbox,"draw_poser");
+  // checkbox = glui->add_checkbox("Draw desired");
+  // AddControl(checkbox,"draw_desired");
+  // checkbox = glui->add_checkbox("Draw estimated");
+  // AddControl(checkbox,"draw_estimated");
+  // checkbox = glui->add_checkbox("Draw bboxes");
+  // AddControl(checkbox,"draw_bbs");
+  // checkbox = glui->add_checkbox("Draw contacts");
+  // AddControl(checkbox,"draw_contacts");
+  // checkbox = glui->add_checkbox("Draw wrenches");
+  // checkbox->set_int_val(1);
+  // AddControl(checkbox,"draw_wrenches");
+  // checkbox = glui->add_checkbox("Draw expanded");
+  // AddControl(checkbox,"draw_expanded");
+  // checkbox = glui->add_checkbox("Draw time");
+  // AddControl(checkbox,"draw_time");
 
   map<string,string> csettings = sim->robotControllers[0]->Settings();
   controllerCommands = sim->robotControllers[0]->Commands();
-  panel = glui->add_rollout("Controller settings");
-  if(!csettings.empty()) {
-    for(map<string,string>::iterator i=csettings.begin();i!=csettings.end();i++) {
-      controllerSettings.push_back(i->first);
-    }
-    controllerSettingIndex = 0;
-    settingsBox = glui->add_listbox_to_panel(panel,"Setting",&controllerSettingIndex);
-    for(size_t i=0;i<controllerSettings.size();i++) {
-      settingsBox->add_item((int)i,controllerSettings[i].c_str());
-    }
-    settingEdit=glui->add_edittext_to_panel(panel,"Value");
-    AddControl(settingsBox,"controller_setting");
-    AddControl(settingEdit,"controller_setting_value");
-  }
-  controllerCommandIndex = 0;
-  GLUI_Listbox* commandsBox = glui->add_listbox_to_panel(panel,"Command",&controllerCommandIndex);
-  for(size_t i=0;i<controllerCommands.size();i++) {
-    commandsBox->add_item((int)i,controllerCommands[i].c_str());
-  }
-  commandEdit = glui->add_edittext_to_panel(panel,"Arg",GLUI_EDITTEXT_TEXT);
-  commandEdit->set_text("");
-  AddControl(commandsBox,"controller_command");
-  AddControl(commandEdit,"controller_command_arg");
+  //panel = glui->add_rollout("Controller settings");
+  //if(!csettings.empty()) {
+  //  for(map<string,string>::iterator i=csettings.begin();i!=csettings.end();i++) {
+  //    controllerSettings.push_back(i->first);
+  //  }
+  //  controllerSettingIndex = 0;
+  //  settingsBox = glui->add_listbox_to_panel(panel,"Setting",&controllerSettingIndex);
+  //  for(size_t i=0;i<controllerSettings.size();i++) {
+  //    settingsBox->add_item((int)i,controllerSettings[i].c_str());
+  //  }
+  //  settingEdit=glui->add_edittext_to_panel(panel,"Value");
+  //  AddControl(settingsBox,"controller_setting");
+  //  AddControl(settingEdit,"controller_setting_value");
+  //}
+  //controllerCommandIndex = 0;
+  //GLUI_Listbox* commandsBox = glui->add_listbox_to_panel(panel,"Command",&controllerCommandIndex);
+  //for(size_t i=0;i<controllerCommands.size();i++) {
+  //  commandsBox->add_item((int)i,controllerCommands[i].c_str());
+  //}
+  //commandEdit = glui->add_edittext_to_panel(panel,"Arg",GLUI_EDITTEXT_TEXT);
+  //commandEdit->set_text("");
+  //AddControl(commandsBox,"controller_command");
+  //AddControl(commandEdit,"controller_command_arg");
   
-  //sensors panel
-  RobotSensors& sensors = sim->controlSimulators[0].sensors;
-  //record default state
-  sensorDrawn.resize(sensors.sensors.size(),false);
-  sensorMeasurementDrawn.resize(sensors.sensors.size());
-  for(size_t i=0;i<sensors.sensors.size();i++) {
-    vector<string> names;
-    sensors.sensors[i]->MeasurementNames(names);
-    sensorMeasurementDrawn[i].resize(names.size(),true);
-  }
-  //add sensors
-  panel = glui->add_rollout("Sensors");
-  sensorSelectIndex = 0;
-  sensorMeasurementSelectIndex = 0;
-  sensorBox = glui->add_listbox_to_panel(panel,"Sensor",&sensorSelectIndex);
-  for(size_t i=0;i<sensors.sensors.size();i++)
-    sensorBox->add_item(i,sensors.sensors[i]->name.c_str());
-  toggleSensorDrawCheckbox = glui->add_checkbox_to_panel(panel,"Show");
-  measurementListbox = glui->add_listbox_to_panel(panel,"Measurement",&sensorMeasurementSelectIndex);
-  toggleMeasurementDrawCheckbox = glui->add_checkbox_to_panel(panel,"Plot value");
-  isolateMeasurementButton = glui->add_button_to_panel(panel,"Isolate");
-  //we'll have to intercept these signals manually and dispatch the right command
-  AddControl(sensorBox,"");
-  AddControl(toggleSensorDrawCheckbox,"");
-  AddControl(measurementListbox,"");
-  AddControl(toggleMeasurementDrawCheckbox,"");
-  AddControl(isolateMeasurementButton,"");
+  ////sensors panel
+  //RobotSensors& sensors = sim->controlSimulators[0].sensors;
+  ////record default state
+  //sensorDrawn.resize(sensors.sensors.size(),false);
+  //sensorMeasurementDrawn.resize(sensors.sensors.size());
+  //for(size_t i=0;i<sensors.sensors.size();i++) {
+  //  vector<string> names;
+  //  sensors.sensors[i]->MeasurementNames(names);
+  //  sensorMeasurementDrawn[i].resize(names.size(),true);
+  //}
+  ////add sensors
+  //panel = glui->add_rollout("Sensors");
+  //sensorSelectIndex = 0;
+  //sensorMeasurementSelectIndex = 0;
+  //sensorBox = glui->add_listbox_to_panel(panel,"Sensor",&sensorSelectIndex);
+  //for(size_t i=0;i<sensors.sensors.size();i++)
+  //  sensorBox->add_item(i,sensors.sensors[i]->name.c_str());
+  //toggleSensorDrawCheckbox = glui->add_checkbox_to_panel(panel,"Show");
+  //measurementListbox = glui->add_listbox_to_panel(panel,"Measurement",&sensorMeasurementSelectIndex);
+  //toggleMeasurementDrawCheckbox = glui->add_checkbox_to_panel(panel,"Plot value");
+  //isolateMeasurementButton = glui->add_button_to_panel(panel,"Isolate");
+  ////we'll have to intercept these signals manually and dispatch the right command
+  //AddControl(sensorBox,"");
+  //AddControl(toggleSensorDrawCheckbox,"");
+  //AddControl(measurementListbox,"");
+  //AddControl(toggleMeasurementDrawCheckbox,"");
+  //AddControl(isolateMeasurementButton,"");
 
-  //posing panel
-  panel = glui->add_rollout("Robot posing");
+  ////posing panel
+  //panel = glui->add_rollout("Robot posing");
 
-  AddControl(glui->add_checkbox_to_panel(panel,"Pose objects"),"pose_objects");
-  AddControl(glui->add_checkbox_to_panel(panel,"Pose by IK"),"pose_ik");
-  driver_listbox = glui->add_listbox_to_panel(panel,"Driver",&cur_driver);
-  Robot* robot = world->robots[0];
-  for(size_t i=0;i<robot->drivers.size();i++) {
-    char buf[256];
-    strcpy(buf,robot->driverNames[i].c_str());
-    driver_listbox->add_item(i,buf);
-  }
-  AddControl(driver_listbox,"driver");
+  //AddControl(glui->add_checkbox_to_panel(panel,"Pose objects"),"pose_objects");
+  //AddControl(glui->add_checkbox_to_panel(panel,"Pose by IK"),"pose_ik");
+  //driver_listbox = glui->add_listbox_to_panel(panel,"Driver",&cur_driver);
+  //Robot* robot = world->robots[0];
+  //for(size_t i=0;i<robot->drivers.size();i++) {
+  //  char buf[256];
+  //  strcpy(buf,robot->driverNames[i].c_str());
+  //  driver_listbox->add_item(i,buf);
+  //}
+  //AddControl(driver_listbox,"driver");
   
-  driver_value_spinner = glui->add_spinner_to_panel(panel,"Value",GLUI_SPINNER_FLOAT);
-  AddControl(driver_value_spinner,"driver_value");
-  AddControl(glui->add_button_to_panel(panel,"Set milestone"),"set_milestone");
+  //driver_value_spinner = glui->add_spinner_to_panel(panel,"Value",GLUI_SPINNER_FLOAT);
+  //AddControl(driver_value_spinner,"driver_value");
+  //AddControl(glui->add_button_to_panel(panel,"Set milestone"),"set_milestone");
 
   UpdateGUI();
 

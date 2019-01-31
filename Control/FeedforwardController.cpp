@@ -206,11 +206,20 @@ void FeedforwardController::SolveTorques(Vector& torques,Real dt)
 
 void FeedforwardController::ZeroForces()
 {
+  //std::cout << "ZeroForces" << std::endl;
+  //std::cout << robot.name << std::endl;
+  //std::cout << robot.links.size() << std::endl;
   wrenches.resize(robot.links.size());
   Wrench zero;
   zero.f.setZero();
   zero.m.setZero();
-  fill(wrenches.begin(),wrenches.end(),zero);
+  //std::cout << "FillForces" << std::endl;
+  //fill(wrenches.begin(),wrenches.end(),zero);
+  wrenches.clear();
+  for(uint k = 0; k < robot.links.size(); k++){
+    wrenches.push_back(zero);
+  }
+  //std::cout << "Done ZeroForces" << std::endl;
 }
 
 void FeedforwardController::AddForce(int link,const Vector3& f,const Vector3& worldpt)
