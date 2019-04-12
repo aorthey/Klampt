@@ -9,11 +9,12 @@
 #include <fstream>
 #include <KrisLibrary/utils/stringutils.h>
 #include <string.h>
+
 using namespace std;
 using namespace PrimitiveShape;
 
 string URDFConverter::packageRootPath("");
-string URDFConverter::primitiveMeshPath("/home/aorthey/git/orthoklampt/data/objects/urdf_primitives/");
+string URDFConverter::primitiveMeshPath("/data/objects/urdf_primitives/");
 bool URDFConverter::useVisGeom = false;
 bool URDFConverter::flipYZ = false;
 
@@ -122,7 +123,7 @@ void URDFLinkNode::GetGeometryProperty(bool useVisGeom){
 	if(geom){
 	  if(geom->type == urdf::Geometry::BOX){
 		  geomPrimitive = true;
-		  geomName = URDFConverter::primitiveMeshPath + "box_ori_center.tri";
+		  geomName = URDFConverter::packageRootPath + URDFConverter::primitiveMeshPath + "box_ori_center.tri";
 			boost::shared_ptr<urdf::Box> box = boost::static_pointer_cast<urdf::Box>(geom);
 			geomScale(0,0) = box->dim.x;
 			geomScale(1,1) = box->dim.y;
@@ -130,14 +131,14 @@ void URDFLinkNode::GetGeometryProperty(bool useVisGeom){
 
 		}else if(geom->type == urdf::Geometry::CYLINDER){
 		  geomPrimitive = true;
-			geomName = URDFConverter::primitiveMeshPath + "cylinder_ori_center.tri";
+			geomName = URDFConverter::packageRootPath + URDFConverter::primitiveMeshPath + "cylinder_ori_center.tri";
 			boost::shared_ptr<urdf::Cylinder> cylinder = boost::static_pointer_cast<urdf::Cylinder>(geom);
 			geomScale(0,0) = cylinder->radius;
 			geomScale(1,1) = cylinder->radius;
 			geomScale(2,2) = cylinder->length;
 		}else if(geom->type == urdf::Geometry::SPHERE){
 		  geomPrimitive = true;
-		  geomName = URDFConverter::primitiveMeshPath + "sphere_ori_center.tri";
+		  geomName = URDFConverter::packageRootPath + URDFConverter::primitiveMeshPath + "sphere_ori_center.tri";
 			boost::shared_ptr<urdf::Sphere> sphere = boost::static_pointer_cast<urdf::Sphere>(geom);
 			geomScale(0,0) = sphere->radius;
 			geomScale(1,1) = sphere->radius;

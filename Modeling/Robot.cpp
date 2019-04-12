@@ -2369,6 +2369,7 @@ bool Robot::LoadURDF(const char* fn)
 	    else 
 	      URDFConverter::packageRootPath = path+"/"+root_path;
 	  }
+    
 	  if(klampt_xml->QueryValueAttribute("default_acc_max",&default_acc_max)!=TIXML_SUCCESS) {
 	    //pass
 	  }
