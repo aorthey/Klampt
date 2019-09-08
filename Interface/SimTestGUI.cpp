@@ -834,8 +834,8 @@ bool GLUISimTestGUI::Initialize()
   if(!settings.read("simtest.settings")) {
   }
 
-  glui = GLUI_Master.create_glui_subwindow(main_window,GLUI_SUBWINDOW_RIGHT);
-  glui->set_main_gfx_window(main_window);
+  // glui = GLUI_Master.create_glui_subwindow(main_window,GLUI_SUBWINDOW_RIGHT);
+  // glui->set_main_gfx_window(main_window);
   //AddControl(glui->add_button("Simulate"),"simulate");
   //AddControl(glui->add_button("Reset"),"reset");
   ////we're going to manually intercept this one to resize the screen and start movie mode
@@ -844,19 +844,19 @@ bool GLUISimTestGUI::Initialize()
   //AddControl(glui->add_checkbox("Log simulation state"),"do_logging");
   //AddControl(glui->add_checkbox("Log contact state"),"do_contact_state_logging");
   //AddControl(glui->add_checkbox("Log contact wrenches"),"do_contact_wrench_logging");
-  GLUI_Panel* panel = glui->add_rollout("Input/output");
+  // GLUI_Panel* panel = glui->add_rollout("Input/output");
   // AddControl(glui->add_edittext_to_panel(panel,"File"),"load_text");
   // AddControl(glui->add_button_to_panel(panel,"Load"),"load_file");
   // AddControl(glui->add_button_to_panel(panel,"Save state"),"save_state");
 
   //AddControl(glui->add_checkbox("Force application mode"),"force_application_mode");
-  GLUI_Checkbox* checkbox = glui->add_checkbox("Draw poser");
-  checkbox->set_int_val(1);
-  AddControl(checkbox,"draw_poser");
-  checkbox = glui->add_checkbox("Draw desired");
-  AddControl(checkbox,"draw_desired");
-  checkbox = glui->add_checkbox("Draw estimated");
-  AddControl(checkbox,"draw_estimated");
+  // GLUI_Checkbox* checkbox = glui->add_checkbox("Draw poser");
+  // checkbox->set_int_val(1);
+  // AddControl(checkbox,"draw_poser");
+  // checkbox = glui->add_checkbox("Draw desired");
+  // AddControl(checkbox,"draw_desired");
+  // checkbox = glui->add_checkbox("Draw estimated");
+  // AddControl(checkbox,"draw_estimated");
   // checkbox = glui->add_checkbox("Draw bboxes");
   // AddControl(checkbox,"draw_bbs");
   // checkbox = glui->add_checkbox("Draw contacts");
@@ -924,21 +924,21 @@ bool GLUISimTestGUI::Initialize()
   //AddControl(isolateMeasurementButton,"");
 
   ////posing panel
-  panel = glui->add_rollout("Robot posing");
+  //panel = glui->add_rollout("Robot posing");
 
-  AddControl(glui->add_checkbox_to_panel(panel,"Pose objects"),"pose_objects");
-  //AddControl(glui->add_checkbox_to_panel(panel,"Pose by IK"),"pose_ik");
-  driver_listbox = glui->add_listbox_to_panel(panel,"Driver",&cur_driver);
-  Robot* robot = world->robots[0];
-  for(size_t i=0;i<robot->drivers.size();i++) {
-    char buf[256];
-    strcpy(buf,robot->driverNames[i].c_str());
-    driver_listbox->add_item(i,buf);
-  }
-  AddControl(driver_listbox,"driver");
+  //AddControl(glui->add_checkbox_to_panel(panel,"Pose objects"),"pose_objects");
+  ////AddControl(glui->add_checkbox_to_panel(panel,"Pose by IK"),"pose_ik");
+  //driver_listbox = glui->add_listbox_to_panel(panel,"Driver",&cur_driver);
+  //Robot* robot = world->robots[0];
+  //for(size_t i=0;i<robot->drivers.size();i++) {
+  //  char buf[256];
+  //  strcpy(buf,robot->driverNames[i].c_str());
+  //  driver_listbox->add_item(i,buf);
+  //}
+  //AddControl(driver_listbox,"driver");
   
-  driver_value_spinner = glui->add_spinner_to_panel(panel,"Value",GLUI_SPINNER_FLOAT);
-  AddControl(driver_value_spinner,"driver_value");
+  //driver_value_spinner = glui->add_spinner_to_panel(panel,"Value",GLUI_SPINNER_FLOAT);
+  //AddControl(driver_value_spinner,"driver_value");
   //AddControl(glui->add_button_to_panel(panel,"Set milestone"),"set_milestone");
 
   UpdateGUI();
