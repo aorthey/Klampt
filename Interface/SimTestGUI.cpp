@@ -982,16 +982,16 @@ bool GLUISimTestGUI::Initialize()
 
 void GLUISimTestGUI::UpdateGUI()
 {
-  Robot* robot = world->robots[0];
-  if(cur_driver >= 0 && cur_driver < (int)robot->drivers.size()) {
-    driver_listbox->set_int_val(cur_driver);
-    Vector2 limits = robot->GetDriverLimits(cur_driver);
-    driver_value_spinner->set_float_limits(limits.x,limits.y);
-    double driver_value = robot->GetDriverValue(cur_driver);
-    driver_value_spinner->set_float_val(driver_value);
-  }
-  UpdateSensorGUI();
-  UpdateControllerSettingGUI();
+  // Robot* robot = world->robots[0];
+  // if(cur_driver >= 0 && cur_driver < (int)robot->drivers.size()) {
+  //   driver_listbox->set_int_val(cur_driver);
+  //   Vector2 limits = robot->GetDriverLimits(cur_driver);
+  //   driver_value_spinner->set_float_limits(limits.x,limits.y);
+  //   double driver_value = robot->GetDriverValue(cur_driver);
+  //   driver_value_spinner->set_float_val(driver_value);
+  // }
+  // UpdateSensorGUI();
+  // UpdateControllerSettingGUI();
 }
 
 void GLUISimTestGUI::UpdateControllerSettingGUI()
