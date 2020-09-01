@@ -131,6 +131,7 @@ public:
   vector<RobotJointDriver> drivers;
   vector<string> linkNames;
   vector<string> driverNames;
+  vector<int> contactLinkIndices;
 
   ///Any extra properties that might be useful
   PropertyMap properties;

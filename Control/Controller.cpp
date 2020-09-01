@@ -75,6 +75,8 @@ void RobotController::SetTorqueCommand(const Vector& torques)
     }
   }
   else {
+    std::cout << "Driver Size: " << robot.drivers.size() << std::endl;
+    std::cout << "Links  Size: " << robot.links.size() << std::endl;
     FatalError("RobotController::SetTorqueCommand: invalid vector size: %d\n",torques.size());
   }
 }
